@@ -16,11 +16,11 @@ const { NotImplementedError } = require("../extensions/index.js");
  */
 function isMAC48Address(n) {
 	let hexArray = "0123456789ABCDEF".split("");
-	return (inputArray =
+	return (
 		n.split("-").filter((element) => {
-			let digitArray = element.split("");
-			return digitArray.every((digit) => hexArray.includes(digit));
-		}).length === 6);
+			return element.split("").every((digit) => hexArray.includes(digit));
+		}).length === 6
+	);
 }
 
 module.exports = {
